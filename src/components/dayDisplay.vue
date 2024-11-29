@@ -11,8 +11,9 @@ defineProps({
       <span>{{day.day}}</span>
     </h3>
     <div class="flex flex-col grow items-center justify-center w-full">
-      <div>
-      </div>
+      <span class="title font-mono">
+        {{day.title}}
+      </span>
     </div>
   </div>
 </template>
@@ -27,11 +28,11 @@ defineProps({
 }
 
 .event.past {
-  @apply border-green-600 opacity-50;
+  @apply border-green opacity-50;
 }
 
 .event.active {
-  @apply border-red-200;
+  @apply border-red;
 }
 
 .event.upcoming {

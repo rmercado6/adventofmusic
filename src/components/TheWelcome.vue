@@ -9,7 +9,7 @@ const data = ref(json);
 
 <template>
   <div class="w-full h-screen flex items-center justify-center flex-col">
-    <h1>
+    <h1 class="border-b-4 border-b-gold w-1/2 text-center pb-4">
       🎄
       Advent of Music
       🎼
