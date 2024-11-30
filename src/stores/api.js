@@ -8,7 +8,11 @@ export const useApiStore = defineStore('api', () => {
 
   async function load() {
     loading.value = true;
-    await fetch(url).then(
+    await fetch(url, {
+      headers: {
+        "Access-Control-Allow-Origin": "https://adventofmusic-api.onrender.com"
+      }
+    }).then(
       response => {
         return response.json()
       }
