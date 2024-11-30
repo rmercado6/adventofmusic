@@ -3,9 +3,11 @@ import {ref} from "vue";
 import json from '@/assets/days.json'
 import dayDisplay from "./dayDisplay.vue";
 
+import MarkdownIt from "markdown-it";
+
 const days = ref(['Sunday', 'Monday', 'Thursday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'])
 const data = ref(json);
-const showModal = ref(false);
+const markdown = new MarkdownIt();
 </script>
 
 <template>
@@ -48,7 +50,7 @@ const showModal = ref(false);
     </div>
   </div>
 
-  <div class="mt-12 flex flex-col items-center w-full divide-y divide-slate-300">
+  <div class="mt-12 flex flex-col items-center w-full divide-y divide-slate-300 min-h-screen">
     <div v-for="item in data.filter(d => (!d.class.includes('disabled')) && !d.class.includes('upcoming'))"
          :key="item.day" :id="item.day" :class="'detail ' + item.class">
       <span class="text-slate-500">Dec {{item.day}}</span>
@@ -58,9 +60,7 @@ const showModal = ref(false);
           {{pill}}
         </span>
       </div>
-      <span>
-        {{item.body}}
-      </span>
+      <span v-if="item.body" v-html="markdown.render(item.body)"></span>
     </div>
   </div>
 </template>

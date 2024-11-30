@@ -4,8 +4,9 @@ import { RouterView } from 'vue-router'
 
 <template>
   <RouterView />
-  <footer>
-    <p>A site by <a href="https://rmercado.dev">rmercado.dev</a></p>
+  <footer class="flex flex-col gap-3">
+    <span class="border-t border-slate-200 w-full max-w-3xl mx-12"></span>
+    <p class="mb-8 mt-4">A site by <a href="https://rmercado.dev" class="hover:underline hover:font-semibold">rmercado.dev</a></p>
   </footer>
 </template>
 
