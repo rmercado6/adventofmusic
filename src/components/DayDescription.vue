@@ -1,11 +1,7 @@
 <script setup>
-import MarkdownIt from "markdown-it";
-
 defineProps({
   day: Object
 })
-
-const markdown = new MarkdownIt();
 </script>
 
 <template>
@@ -13,7 +9,7 @@ const markdown = new MarkdownIt();
     <span class="text-slate-500">Dec {{day.day}}</span>
     <h3 class="grow mb-1 flex gap-2">
       <span>{{day.title}}</span>
-      <span>{{day.emoji}}</span>
+      <span v-html="markdown.render(day.emoji)"></span>
     </h3>
     <div class="flex gap-1 mb-3">
         <span v-for="pill in day.tags" :key="pill" class="pill">
