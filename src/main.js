@@ -11,7 +11,7 @@ import router from './router'
 
 const app = createApp(App)
 
-const markdown = new MarkdownIt().use(emoji);
+const markdown = new MarkdownIt({html: true, breaks: true}).use(emoji);
 
 app.use(createPinia())
 app.use(router)

@@ -1,22 +1,33 @@
 <script setup>
-defineProps({
+import {ref} from "vue";
+
+const props = defineProps({
   day: Object
 })
+
+const extended = ref(false);
+
+if (props.day.class.includes('active')){
+  extended.value = true;
+}
 </script>
 
 <template>
   <div :id="day.day" :class="'detail ' + day.class">
-    <span class="text-slate-500">Dec {{day.day}}</span>
+    <div class="flex text-slate-500">
+      <span class="grow">Dec {{day.day}}</span>
+      <h4 :class="extended ? '' : 'rotate-180'" @click="extended = !extended">^</h4>
+    </div>
     <h3 class="grow mb-1 flex gap-2">
       <span>{{day.title}}</span>
       <span v-html="markdown.render(day.emoji)"></span>
     </h3>
-    <div class="flex gap-1 mb-3">
+    <div v-if="extended" class="flex gap-1 mb-3">
         <span v-for="pill in day.tags" :key="pill" class="pill">
           {{pill}}
         </span>
     </div>
-    <span v-if="day.body" v-html="markdown.render(day.body)"></span>
+    <div v-if="day.body && extended" v-html="markdown.render(day.body)" :class="'markdown ' + day.class"></div>
   </div>
 </template>
 
@@ -34,6 +45,14 @@ defineProps({
 }
 
 .pill {
-  @apply py-0.5 px-1 rounded-md border border-lavender text-midnight bg-lavender font-thin font-mono text-xs;
+  @apply py-0.5 px-1 rounded-md border border-lavender text-midnight bg-lavender/60 font-thin font-mono text-xs;
+}
+
+.markdown {
+  @apply mb-3 text-justify;
+}
+
+.extend-btn {
+  @apply font-mono text-slate-300;
 }
 </style>
