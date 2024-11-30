@@ -1,6 +1,6 @@
 # 🎄 Advent of Music 🎼
 
-🌐 [adventofmusic.rmercado.dev](adventofmusic.rmercado.dev)
+🌐 [adventofmusic.rmercado.dev](https://adventofmusic.rmercado.dev)
 
 Welcome to **Advent of Music** — a musical composition challenge designed to inspire creativity, improve your
 compositional skills, and bring joy to the holiday season! Inspired by the popular *Advent of Code*, Advent of Music
