@@ -57,7 +57,7 @@ api.load()
     </div>
   </div>
 
-  <div v-if="!api.loading" class="mt-12 flex flex-col items-center w-full divide-y divide-slate-300 min-h-screen">
+  <div v-if="!api.loading" class="flex flex-col items-center w-full divide-y divide-slate-300">
     <DayDescription v-for="item in api.data.filter(d => (!d.class.includes('disabled')) && !d.class.includes('upcoming'))"
                     :key="item.day" :day="item">
     </DayDescription>
