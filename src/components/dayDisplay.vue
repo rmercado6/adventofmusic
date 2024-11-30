@@ -1,30 +1,26 @@
 <script setup>
+import {ref} from "vue";
+
 defineProps({
   day: Object
 });
 </script>
 
 <template>
-  <div :class="day.class">
-    <h3 class="flex items-end gap-3">
-      <span v-if="day.class.includes('upcoming')" class="text-lg">🎁</span>
+  <a :class="'event ' + day.class" :href="'#' + day.day">
+    <h3 class="flex justify-end md:items-end items-center md:gap-3 gap-2 w-full">
+      <span v-if="day.class.includes('upcoming')" class="md:text-lg text-xs">🎁</span>
       <span>{{day.day}}</span>
     </h3>
-    <div class="flex flex-col grow items-center justify-center w-full">
-      <span class="title font-mono">
-        {{day.title}}
-      </span>
-    </div>
-  </div>
+    <span class="emoji">
+      {{day.emoji}}
+    </span>
+  </a>
 </template>
 
 <style scoped>
-.day {
-  @apply !justify-start !items-end flex flex-col;
-}
-
 .event {
-  @apply aspect-square p-3 border border-4 border-slate-100;
+  @apply flex flex-col aspect-square p-1 md:p-3 border md:border-4 border-slate-200;
 }
 
 .event.past {
@@ -41,5 +37,8 @@ defineProps({
 
 .event.disabled {
   @apply text-slate-400 opacity-40;
+}
+.emoji {
+  @apply text-sm font-mono md:flex hidden grow;
 }
 </style>

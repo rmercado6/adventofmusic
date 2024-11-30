@@ -1,127 +1,139 @@
 [
   {
     "day": 1,
-    "class": "day event past",
-    "title": "Snowflake melody"
+    "class": "past",
+    "title": "Snowflake melody",
+    "body": "",
+    "emoji": "\uD83C\uDFB6",
+    "tags": [
+      "melody",
+      "period form"
+    ]
   },
   {
     "day": 2,
-    "class": "day event active"
+    "class": "active",
+    "title": "Snowflake melody 2",
+    "emoji": "\uD83C\uDFB6",
+    "tags": [
+      "melody",
+      "period form"
+    ]
   },
   {
     "day": 3,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 4,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 5,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 6,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 7,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 8,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 9,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 10,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 11,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 12,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 13,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 14,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 15,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 16,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 17,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 18,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 19,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 20,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 21,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 22,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 23,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 24,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 25,
-    "class": "day event upcoming"
+    "class": "upcoming"
   },
   {
     "day": 26,
-    "class": "day event disabled"
+    "class": "disabled"
   },
   {
     "day": 27,
-    "class": "day event disabled"
+    "class": "disabled"
   },
   {
     "day": 28,
-    "class": "day event disabled"
+    "class": "disabled"
   },
   {
     "day": 29,
-    "class": "day event disabled"
+    "class": "disabled"
   },
   {
     "day": 30,
-    "class": "day event disabled"
+    "class": "disabled"
   },
   {
     "day": 31,
-    "class": "day event disabled"
+    "class": "disabled"
   }
 ]

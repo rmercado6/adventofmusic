@@ -13,7 +13,7 @@ export default {
         red: '#e04e4e',              // Rich red, for alerts, actions, etc.
         green: '#78c3a3',            // Soft green, for balance, buttons, etc.
         white: '#f9fafb',            // Clean white background
-        gray: '#4b5563',             // Dark gray text
+        // gray: '#4b5563',             // Dark gray text
         lavender: '#d1c6e1',         // Soft lavender, for subtle accents or borders
         blue: '#2d3a58',             // Twilight blue, for secondary elements
       },
