@@ -10,9 +10,7 @@ defineProps({
     <h3 class="flex justify-end md:items-end items-center md:gap-3 gap-2 w-full">
       <span>{{day.day}}</span>
     </h3>
-    <span class="emoji">
-      {{day.emoji}}
-    </span>
+    <span class="emoji" v-html="markdown.render(day.emoji)"></span>
   </a>
   <div v-else :class="'event cursor-default ' + day.class">
     <h3 class="flex justify-end md:items-end items-center md:gap-3 gap-2 w-full">
