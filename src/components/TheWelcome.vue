@@ -18,27 +18,25 @@ api.load()
       🎼
     </h1>
     <div class="w-full md:w-2/3 3xl:w-1/3 max-w-3xl text-justify flex flex-col gap-3">
-      <p>This holiday season, unlock your creativity with a unique Advent Calendar designed for musicians, composers,
-        and music lovers alike. From December 1st to December 25th, embark on a daily challenge that will inspire new
-        ideas, techniques, and compositions. Each day reveals a new prompt or task — from composing a melody in a
-        specific style to experimenting with unusual time signatures or harmonies. Whether you're a seasoned composer or
-        just starting out, these challenges are crafted to inspire growth, creativity, and fun.</p>
+      <p>Get ready for a festive, musical adventure this December! 🌟 The Advent of Music challenge invites you to
+        compose new pieces throughout the month, with a fresh task waiting for you every day. Each challenge will
+        guide you step by step — from creating beautiful melodies, to crafting counter melodies, arranging a four-part
+        chorale, and even orchestrating for different ensembles! 🎼✨ The tasks will be increasing in complexity every
+        day. By the end of the challenge you will end with new pieces to share and will have improved your composing
+        skills by practicing.</p>
 
-      <p>As you open each gift 🎁, you'll find a fresh prompt that pushes the boundaries of your musical expression. By
-        December 25th, you'll have a portfolio of 25 unique musical creations, each one a testament to your dedication
-        and imagination.</p>
+      <p>Whether you're a seasoned composer or just starting out, this is a fun way to hone your skills and stay
+        inspired this holiday season. 🎄🎶</p>
 
-      <p>Perfect for solo composers, music students, or anyone looking to explore the art of composition in a structured
-        yet playful way, this Advent Calendar is the ultimate way to celebrate the festive season while honing your
-        craft.</p>
+      <p>We’d love to hear your compositions! Share them on social media using the hashtag
+        <span class="font-semibold">#AdventOfMusic</span> and join the growing community of composers celebrating the
+        season through music! 🎉</p>
 
-      <p>Share your compositions on social media using the hashtag #AdventOfMusic and connect with fellow musicians
-        throughout the season. By Christmas, you’ll have 25 unique pieces to celebrate your progress and creativity!</p>
-
-      <p>Get ready to compose, create, and celebrate the holiday spirit through music!</p>
+      <p>Are you ready to compose your Christmas music magic? Let’s get started! 🎅🎵</p>
     </div>
 
-    <span v-if="api.loading" class="absolute inset-x-0 bottom-10 animate-bounce text-xs text-slate-500 font-mono w-full text-center">
+    <span v-if="api.loading"
+          class="absolute inset-x-0 bottom-10 animate-bounce text-xs text-slate-500 font-mono w-full text-center">
       Loading...
     </span>
   </div>
@@ -58,8 +56,9 @@ api.load()
   </div>
 
   <div v-if="!api.loading" class="flex flex-col items-center w-full divide-y divide-slate-300">
-    <DayDescription v-for="item in api.data.filter(d => (!d.class.includes('disabled')) && !d.class.includes('upcoming'))"
-                    :key="item.day" :day="item">
+    <DayDescription
+      v-for="item in api.data.filter(d => (!d.class.includes('disabled')) && !d.class.includes('upcoming'))"
+      :key="item.day" :day="item">
     </DayDescription>
   </div>
 </template>
