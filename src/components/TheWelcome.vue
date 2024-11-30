@@ -1,13 +1,11 @@
 <script setup>
 import {ref} from "vue";
 import json from '@/assets/days.json'
-import dayDisplay from "./dayDisplay.vue";
-
-import MarkdownIt from "markdown-it";
+import DayDisplay from "@/components/DayDisplay.vue";
+import DayDescription from "@/components/DayDescription.vue";
 
 const days = ref(['Sunday', 'Monday', 'Thursday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'])
 const data = ref(json);
-const markdown = new MarkdownIt();
 </script>
 
 <template>
@@ -45,44 +43,20 @@ const markdown = new MarkdownIt();
       <div class="grid grid-cols-7 md:gap-3 gap-1 max-w-3xl aspect-video">
         <div v-for="day in days" :key="day" class="day hidden md:flex">{{day}}</div>
         <div v-for="day in days" :key="day" class="day md:hidden flex">{{day[0]}}</div>
-        <dayDisplay v-for="item in data" :key="item.day" :day="item"></dayDisplay>
+        <DayDisplay v-for="item in data" :key="item.day" :day="item"></DayDisplay>
       </div>
     </div>
   </div>
 
   <div class="mt-12 flex flex-col items-center w-full divide-y divide-slate-300 min-h-screen">
-    <div v-for="item in data.filter(d => (!d.class.includes('disabled')) && !d.class.includes('upcoming'))"
-         :key="item.day" :id="item.day" :class="'detail ' + item.class">
-      <span class="text-slate-500">Dec {{item.day}}</span>
-      <h3 class="grow mb-1">{{item.title}}</h3>
-      <div class="flex gap-1 mb-3">
-        <span v-for="pill in item.tags" :key="pill" class="pill">
-          {{pill}}
-        </span>
-      </div>
-      <span v-if="item.body" v-html="markdown.render(item.body)"></span>
-    </div>
+    <DayDescription v-for="item in data.filter(d => (!d.class.includes('disabled')) && !d.class.includes('upcoming'))"
+                    :key="item.day" :day="item">
+    </DayDescription>
   </div>
 </template>
 
 <style scoped>
 .day {
   @apply w-full justify-center items-center text-slate-400;
-}
-
-.detail {
-  @apply max-w-3xl w-full py-3 px-7 flex flex-col my-3;
-}
-
-.detail.past {
-  @apply border border-8 border-green opacity-65;
-}
-
-.detail.active {
-  @apply border border-8 border-red;
-}
-
-.pill {
-  @apply py-0.5 px-1 rounded-md border border-lavender text-midnight bg-lavender font-semibold font-mono text-xs;
 }
 </style>
