@@ -57,7 +57,7 @@ api.load()
 
   <div v-if="!api.loading" class="flex flex-col items-center w-full divide-y divide-slate-300">
     <DayDescription
-      v-for="item in api.data.filter(d => (!d.class.includes('disabled')) && !d.class.includes('upcoming'))"
+      v-for="item in api.data.filter(d => (!d.class.includes('disabled')) && !d.class.includes('upcoming')).sort((a, b) => {return b.day - a.day})"
       :key="item.day" :day="item">
     </DayDescription>
   </div>
